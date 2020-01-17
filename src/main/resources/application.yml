@@ -1,0 +1,6 @@
+server:
+  port: 6666
+spring:
+  cloud:
+    zookeeper:
+      connect-string: 172.16.8.52:2181
