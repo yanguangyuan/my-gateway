@@ -6,7 +6,14 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: user-center-test
+        - id: uc
           uri: http://127.0.0.1:7690
+          filters:
+            - My=true # 第二种路由过滤器实现(工厂名称XXGatewayFilterFactory)
           predicates:
-          - Path=/**
+          - Path=/uc/**
+
+#        - id: settlement
+#          uri: http://127.0.0.1:7296
+#          predicates:
+#            - Path=/settlement/**
