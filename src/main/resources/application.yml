@@ -1,19 +1,12 @@
 server:
-  port: 6666
-management:
-  endpoints:
-    web:
-      #base-path: "/actuator"
-      exposure:
-        include: "*"
+  port: 7777
 spring:
   application:
-    name: gt
+    name: my-gateway
   cloud:
-    zookeeper:
-      connect-string: 172.16.8.52:2181
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
+      routes:
+        - id: user-center-test
+          uri: http://127.0.0.1:7690
+          predicates:
+          - Path=/**

@@ -7,8 +7,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 /**
  * @author yanguangyuan
  */
-@SpringBootApplication
-@EnableDiscoveryClient
+@SpringBootApplication(scanBasePackages = "com.ygy")
+//@EnableDiscoveryClient
 public class MyGatewayApplication {
 
     public static void main(String[] args) {
